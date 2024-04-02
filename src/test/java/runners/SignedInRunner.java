@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/signed_in.feature",
         glue = "stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@SuccessfullySigned"
+        tags = ""
 )
 public class SignedInRunner {
 }

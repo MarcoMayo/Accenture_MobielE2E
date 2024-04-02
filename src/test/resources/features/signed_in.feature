@@ -7,5 +7,5 @@ Feature: SignedIn at SwagLabs
 
   @ErrorSigned
   Scenario: SignedIn Error
-    When that Juan try signed-in with error data
+    When that Juan2 try signed-in with error data
     Then he can see the message error

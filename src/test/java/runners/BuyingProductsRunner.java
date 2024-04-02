@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/buying_products.feature",
         glue = "stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@Product_Shopping_Cart"
+        tags = ""
 )
 public class BuyingProductsRunner {
 }

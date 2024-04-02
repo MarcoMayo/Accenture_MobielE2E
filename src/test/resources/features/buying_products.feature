@@ -10,13 +10,13 @@ Feature: Use Shopping Cart
 
   @Product_Shopping_Cart
   Scenario: Adding products to the shopping cart
-    Given that Juan signed-in SwagLabs app
+    Given that Juan2 signed-in SwagLabs app
     When He puts in the cart the "Sauce Labs Backpack"
     Then He should see the product in his shopping cart
 
   @Removing_Products
   Scenario: Removing products from the shopping cart
-    Given that Juan signed-in SwagLabs app
+    Given that Juan3 signed-in SwagLabs app
     And He puts in the cart the "Sauce Labs Backpack"
     When He removes the "Sauce Labs Backpack" from his shopping cart
     Then His shopping cart should be empty

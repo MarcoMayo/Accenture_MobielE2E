@@ -1,5 +1,7 @@
 package stepdefinitions;
 
+import io.appium.java_client.AppiumDriver;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -20,6 +22,7 @@ import static userinterface.ProductPage.PRODUCTS_DISPLAYED;
 import static userinterface.CheckoutPage.PRODUCT_NAME;
 import static userinterface.CheckoutPage.BTN_REMOVE;
 import static userinterface.LoginPage.MESSAGE_ERROR;
+import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
 import net.serenitybdd.screenplay.ensure.Ensure;
 
@@ -82,6 +85,12 @@ public class BuyingProductsStepDefinition {
     @Then("His shopping cart should be empty")
     public void hisShoppingCartShouldBeEmpty() {
         theActorInTheSpotlight().attemptsTo(Ensure.that(BTN_REMOVE).isNotDisplayed());
+    }
+    @After
+    public void finish() {
+        AppiumDriver appiumDriver = getProxiedDriver();
+        appiumDriver.quit();
+
     }
 
 }
