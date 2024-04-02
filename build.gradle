@@ -41,7 +41,6 @@ test {
     testLogging.showStandardStreams = true
     testLogging.exceptionFormat = 'full'
     systemProperty 'properties', System.getProperty('properties')
-    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
 }
 
 tasks.withType(Test) {

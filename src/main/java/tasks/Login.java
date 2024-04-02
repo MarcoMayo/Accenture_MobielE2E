@@ -12,18 +12,26 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnab
 
 public class Login implements Task {
 
+    private String username;
+    private String password;
+
+    public Login(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 WaitUntil.the(TXT_USERNAME,isEnabled()).forNoMoreThan(5).seconds(),
-                Enter.theValue("standard_user").into(TXT_USERNAME),
-                Enter.theValue("secret_sauce").into(TXT_PASSWORD),
+                Enter.theValue(username).into(TXT_USERNAME),
+                Enter.theValue(password).into(TXT_PASSWORD),
                 Click.on(BTN_LOGIN)
         );
     }
 
-    public static Login atSwagLabs(){
-        return Tasks.instrumented(Login.class);
+    public static Login atSwagLabs(String username, String password){
+        return Tasks.instrumented(Login.class, username, password);
     }
 }
 
